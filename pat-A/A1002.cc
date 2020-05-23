@@ -1,28 +1,28 @@
-#include <iostream>
 #include <cstdio>
+#include <iostream>
 using namespace std;
+const int max_n = 1000;
 
 int main() {
-	double a[1000] = {0};
-	int x,m,n,cnt=0;
+	double p[max_n] = {0};
+	int x,k,count = 0;
 	double y;
-	cin >> m;
-	for(int i=0;i<m;i++) {
+	cin >> k;
+	for(int i=0;i<k;i++) {
 		cin >> x >> y;
-		a[x] += y;
+		p[x] += y;
 	}
-	cin >> n;
-	for(int i=0;i<n;i++) {
+	cin >> k;
+	for(int i=0;i<k;i++) {
 		cin >> x >> y;
-		a[x]+=y;
+		p[x] += y;
 	}
-	for(int i=0;i<1000;i++) {
-		if(a[i]!=0) cnt++;
+	for(int i=0;i<max_n;i++) {
+		if(p[i]!=0) count++;
 	}
-	cout << cnt;
-	for(int i=999;i>=0;i--) {
-		if(a[i]!=0)
-			cout << " " << i << " " << a[i];
+	printf("%d",count);
+	for(int i=max_n;i>=0;i--) {
+		if(p[i]!=0) printf(" %d %.1f",i,p[i]);
 	}
 	return 0;
 }
